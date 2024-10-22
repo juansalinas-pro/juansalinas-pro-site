@@ -38,7 +38,7 @@ export default function Home() {
 
   
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mt-12 mb-6">Get in touch</h3>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">I'm most active on <a href="https://www.linkedin.com/in/juansalinas-xyz/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">LinkedIn</a>. You can also find me at <Link href="mailto:jmsalinas88@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">jmsalinas88@gmail</Link>.</p>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">I'm most active on <a href="https://www.linkedin.com/in/juansalinas-xyz/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">LinkedIn</a>. You can also find me at <Link href="mailto:jmsalinas88@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">jmsalinas88@gmail.com</Link>.</p>
         </div>
       </main>
     </div>
