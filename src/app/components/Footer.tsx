@@ -14,18 +14,16 @@ export default function Footer() {
   return (
     <footer className="bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div className="xl:flex xl:justify-between">
-          <div className="space-y-8">
-            <Link href="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-bold text-gray-900 dark:text-white">Juan Salinas</span>
-            </Link>
-            <p className="text-gray-500 dark:text-gray-400 text-base">
-              Software Engineer passionate about creating innovative solutions.
-            </p>
-          </div>
+        <div className="flex flex-col items-center">
+          <Link href="/" className="flex items-center justify-center mb-6">
+            <span className="text-2xl font-bold text-gray-900 dark:text-white">Juan Salinas</span>
+          </Link>
+          <p className="text-gray-500 dark:text-gray-400 text-base text-center mb-8">
+            Software Engineer passionate about creating innovative solutions.
+          </p>
         </div>
-        <div className="mt-8 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between">
-          <div className="flex space-x-6 md:order-2">
+        <div className="flex flex-col items-center">
+          <div className="flex justify-center space-x-6 mb-6">
             {socialLinks.map((item) => (
               <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500" target="_blank" rel="noopener noreferrer">
                 <span className="sr-only">{item.name}</span>
@@ -33,7 +31,7 @@ export default function Footer() {
               </a>
             ))}
           </div>
-          <p className="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
+          <p className="text-base text-gray-400 text-center">
             © {new Date().getFullYear()} Juan Salinas. All rights reserved.
           </p>
         </div>
