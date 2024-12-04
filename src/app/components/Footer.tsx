@@ -5,7 +5,7 @@ export default function Footer() {
   const socialLinks = [
     { name: 'GitHub', icon: Github, href: 'https://github.com/juansalinas-xyz' },
     { name: 'Twitter', icon: Twitter, href: 'https://x.com/juansalinas_xyz' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/juansalinas-xyz/' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/juansalinas-pro/' },
     { name: 'Email', icon: Mail, href: 'mailto:jmsalinas88@gmail.com' },
     { name: 'Medium', icon: Rss, href: 'https://medium.com/@juansalinas-xyz' },
     { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/juansalinas_xyz/' },
