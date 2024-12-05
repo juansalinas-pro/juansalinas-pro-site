@@ -6,7 +6,7 @@ import { Menu, X } from 'lucide-react'
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Blog', href: 'https://blog.juansalinas.pro/' },
 ];
 
 export default function Header() {
