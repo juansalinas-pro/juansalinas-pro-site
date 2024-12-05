@@ -7,7 +7,7 @@ export default function Footer() {
     { name: 'Twitter', icon: Twitter, href: 'https://x.com/juansalinas_xyz' },
     { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/juansalinas-xyz/' },
     { name: 'Email', icon: Mail, href: 'mailto:jmsalinas88@gmail.com' },
-    { name: 'Medium', icon: Rss, href: 'https://medium.com/@juansalinas-xyz' },
+    { name: 'Blog', icon: Rss, href: 'https://blog.juansalinas.pro/' },
     { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/juansalinas_xyz/' },
   ]
 
