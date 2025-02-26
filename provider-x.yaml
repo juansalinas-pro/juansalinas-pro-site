@@ -1,0 +1,134 @@
+openapi: "3.0.1"
+info:
+  title: "OpenAPI definition"
+  version: "v0"
+
+servers:
+  - url: "http://localhost:8080/flights/provider-x"
+    description: "Generated server URL"
+
+paths:
+  /transactions:
+    post:
+      tags:
+        - "transactions-controller"
+      operationId: "postTransactions"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TransactionsDTO"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TransactionResponseDTO"
+
+  /itineraries/search:
+    post:
+      tags:
+        - "itineraries-search-controller"
+      operationId: "getAvailability"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GetAvailabilityRequestDTO"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetAvailabilityResponseDTO"
+
+  /retrieve/{recordLocator}:
+    get:
+      tags:
+        - "retrieve-controller"
+      operationId: "retrieveFlights"
+      parameters:
+        - name: "recordLocator"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+        - name: "email"
+          in: "header"
+          required: false
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReservationSummary"
+
+  /dynamic-inventory/flights/{id}:
+    get:
+      tags:
+        - "dynamic-inventory-controller"
+      operationId: "getDynamicInventory"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FlightsDTOResponse"
+
+components:
+  schemas:
+    TransactionDTO:
+      type: "object"
+      required:
+        - "transactionDetail"
+        - "type"
+      properties:
+        type:
+          type: "string"
+          enum: 
+            - "MOVEMENT"
+            - "COMPENSATION"
+            - "VOUCHER"
+        transactionDetail:
+          type: "array"
+          items:
+            type: "object"
+            additionalProperties: 
+              type: "string"
+
+    TransactionsDTO:
+      type: "object"
+      required:
+        - "action"
+        - "operationId"
+        - "recordLocator"
+        - "transactions"
+      properties:
+        action:
+          type: "string"
+          enum: 
+            - "ACCEPTANCE"
+        recordLocator:
+          type: "string"
+        transactions:
+          type: "array"
+          items:
+            $ref: "#/components/schemas/TransactionDTO"
+        operationId:
+          type: "string"
+        currency:
+          type: "string"
